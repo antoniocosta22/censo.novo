@@ -1,0 +1,28 @@
+
+.link {
+    text-decoration: none;
+    color: black;
+}
+#meusdados {
+    padding: 7px;
+    background-color: white;
+    border-radius: 2px;
+    display: block;
+    width: auto;
+    cursor: pointer;
+}
+.detalhes .recentesobs table tr td {
+padding: 0px 0px;
+}
+@media (max-width: 480px) {
+    .detalhes .recentesobs table {
+    width: 100%;
+    }
+    #meusdados {
+        text-align: center;
+        width: auto;
+    }
+    .cardheader {
+        justify-content: center;
+    }
+}

@@ -1,0 +1,627 @@
+@font-face {
+     font-family: Poppins-Regular;
+     src: url("../font_google/Poppins-Medium.ttf");
+}
+:root {
+    --main-color: rgb(19, 103, 182);
+    --pane-padding: 8px;
+  }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins-regular, arial;
+}
+body {
+    overflow-x: hidden;
+}
+/* conteudo geral*/
+.container {
+    position: relative;
+    width: 100%;
+}
+#logo {
+    padding: 20px;
+    padding-bottom: 0;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+.navegacao{
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    background: rgb(19, 103, 182);
+    transition: 0.5s;
+    overflow: hidden;
+}
+.navegacao.active {
+    width: 50px;
+}
+/* estilização da lista*/
+.navegacao ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.navegacao ul li {
+    position: relative;
+    width: 100%;
+    list-style: none;
+}
+.navegacao ul li:hover{
+    background: linear-gradient(
+        45deg, black, transparent);
+}
+.navegacao ul li:nth-child(1){
+    margin-bottom: 20px;
+}
+.navegacao ul li:nth-child(1):hover{
+    background: transparent;
+}
+.navegacao ul li a {
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: white;
+}
+/* estilização dos icones*/
+.navegacao ul li a .icon {
+    position: relative;
+    display: block;
+    min-width: 50px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    
+}
+.navegacao ul li a .icon .fas {
+    color: white;
+    font-size: 20px;
+}
+.navegacao ul li a .title {
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 35px;
+    line-height: 35px;
+    white-space: nowrap;
+}
+
+/* fim das classes de navegação e inicio do main */
+
+.main {
+    position: absolute;
+    width: calc(100% - 250px);
+    left: 250px;
+    min-height: 100vh;
+    background: white;
+    transition: 0.5s;
+}
+.main.active {
+    width: calc(100% - 50px);
+    left: 50px;
+}
+/* barra de navegação horizontal da parte de cima com o input buscar e foto*/
+.main .topbar {
+    width: 100%;
+    height: 60px;
+    padding: 0 10px;
+    display: flex;
+    background: rgb(19, 103, 182);
+    justify-content: space-between;
+    align-items: center;
+}
+/* fechamento do menu de navegação*/
+.toggle {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
+.toggle:before {
+    content: '\f036';
+    font-family: FontAwesome;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    line-height: 60px;
+    font-size: 24px;
+    text-align: center;
+    color: rgb(238, 238, 238);
+}
+/* input de busca*/
+.buscar {
+    position: relative;
+    width: 400px;
+    margin: 0 10px;
+}
+.buscar label {
+    position: relative;
+    width: 100%;
+
+}
+/* input buscar*/
+.buscar label input {
+    width: 100%;
+    height: 35px;
+    border-radius: 40px;
+    border: none;
+    padding: 5px 40px;
+    outline: none;
+}
+.buscar label .fas {
+    position: absolute;
+    left: 15px;
+    top: 5px;
+}
+/* imagem do usuario*/
+.user {
+    position: relative;
+    min-width: 50px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+.user img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* cartões do inicio*/
+.cardbox {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr );
+    grid-gap: 20px;
+}
+.cardbox .card {
+    position: relative;
+    padding: 20px;
+    min-height: 107px;
+    border-radius: 10px;
+    border: 3px solid rgb(19, 103, 182);
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    align-items: center;
+}
+.cardbox .card .numbers {
+    position: relative;
+    font-size: 18px;
+    font-weight:bold;
+}
+.cardbox .card .cardname {
+    color: rgb(100, 100, 100);
+    font-size: small;
+    font-weight: bold;
+}
+.cardbox .card .iconbox {
+    font-size: 1.5em;
+    color: rgb(19, 103, 182);
+}
+/* detalhes*/
+.detalhes {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    padding-top: 0;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 2fr 1fr;
+}
+.detalhes .recentesobs {
+    position: relative;
+    border: 3px solid rgb(19 103 182);
+    height: auto;
+    border-radius: 10px;
+    min-height: 300px;
+    padding: 20px;
+}
+
+.cardheader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.cardheader h2 {
+    font-weight: 600;
+    font-size: larger;
+}
+.botao {
+    position: relative;
+    padding: 5px 10px;
+    background: rgb(19, 103, 182);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+/*frota*/
+
+
+.detalhes_frota {
+    position: relative;
+    width: 100%;
+    margin-top: -20px;
+    padding: 20px;
+    padding-top: 0;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 3fr;
+}
+.detalhes_frota .recentesobs_frota {
+    position: relative;
+    height: auto;
+    border: 3px solid rgb(19, 103, 182);
+    min-height: 300px;
+    border-radius: 20px;
+    padding: 20px;
+}
+.cardheader_frota {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.cardheader_frota h2 {
+    font-weight: 600;
+}
+.botao_frota {
+    position: relative;
+    padding: 5px 10px;
+    background: rgb(19, 103, 182);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.botao_ops {
+    position: relative;
+    padding: 5px 25px;
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    border-radius: 5px;
+}
+.botao_opsid{
+    position: relative;
+    padding: 0.1em 0.6em;
+    background: rgb(255, 230, 0);
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 15px;
+    letter-spacing: -1px;
+}
+
+
+.detalhes_frota table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+.detalhes_frota table thead td{
+    font-weight: 600;
+}
+.detalhes_frota .recentesobs_frota table tr {
+    border-bottom: 1px solid rgb(19, 103, 182);
+}
+.detalhes_frota .recentesobs_frota table tbody tr:last-child{
+    border-bottom: none;
+}
+
+.detalhes_frota .recentesobs_frota table tbody tr:hover{
+    background: rgb(19, 103, 182);
+    color: white;
+}
+.detalhes_frota .recentesobs_frota table tr td {
+    padding: 4px 1px;
+    font-size: small;
+}
+.detalhes_frota .recentesobs_frota table thead tr td:last-child,
+.detalhes_frota .recentesobs_frota table tbody tr td:last-child{
+    text-align: right;
+}
+.detalhes_frota .recentesobs_frota table thead tr td:nth-child(2),
+.detalhes_frota .recentesobs_frota table tbody tr td:nth-child(2){
+    text-align: right;
+    padding-right: 20px;
+}
+.detalhes_frota .recentesobs_frota table thead tr td:nth-child(3),
+.detalhes_frota .recentesobs_frota table tbody tr td:nth-child(3){
+    text-align: center;
+}
+.status_frota {
+    position: relative;
+    padding: 2px 4px;
+    background: yellow;
+    color: rgb(0, 0, 0);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 300px;
+    letter-spacing: 1px;
+}
+
+.a{
+    background: rgba(0, 255, 0, 0.781);
+}
+.i{
+    background: rgb(255, 0, 85);
+    color: white;
+}
+.filas {
+    font-size: 12px;
+}
+
+/* frota fim*/
+
+/*formatação da tabela*/
+.detalhes table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+.detalhes table thead td{
+    font-weight: 600;
+}
+.detalhes .recentesobs table tr {
+    border-bottom: 1px solid rgb(19, 103, 182);
+}
+.detalhes .recentesobs table tbody tr:last-child{
+    border-bottom: none;
+}
+.detalhes .recentesobs table tbody tr:hover{
+    background: rgb(19, 103, 182);
+    color: white;
+}
+.detalhes .recentesobs table tr td {
+    padding: 4px 2px;
+}
+.detalhes .recentesobs table thead tr td:last-child,
+.detalhes .recentesobs table tbody tr td:last-child{
+    text-align: left;
+}
+.detalhes .recentesobs table thead tr td:nth-child(2),
+.detalhes .recentesobs table tbody tr td:nth-child(2){
+    text-align: left;
+    padding-right: 20px;
+}
+.detalhes .recentesobs table thead tr td:nth-child(3),
+.detalhes .recentesobs table tbody tr td:nth-child(3){
+    text-align: left;
+}
+.status {
+    position: relative;
+    padding: 2px 4px;
+    background: yellow;
+    color: rgb(0, 0, 0);
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+.atention {
+    position: relative;
+    padding: 2px 4px;
+    background: yellow;
+    color: rgb(0, 0, 0);
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.pendente {
+    background: rgba(251, 255, 0, 0.781);
+}
+.encaminhada{
+    background: blue;
+    color: white;
+}
+.a {
+    background: rgba(0, 255, 0, 0.781);
+}
+.atencao {
+    background: rgba(251, 255, 0, 0.781);
+}
+.n {
+    background: rgba(0, 132, 255, 0.781);
+    color: white;
+}
+.kit_p {
+    background: rgba(0, 177, 174, 0.781);
+    color: white;
+}
+.mig_t {
+    background: rgba(2, 128, 84, 0.781);
+    color: white;
+}
+.mig_p {
+    background: rgba(98, 0, 255, 0.781);
+    color: white;
+}
+.inst {
+    background: rgba(94, 94, 94, 0.781);
+    color: white;
+}
+.indi {
+    background: rgba(255, 183, 0, 0.781);
+    color: white;
+}
+.total_v {
+    background: rgba(0, 5, 41, 0.781);
+    color: white;
+}
+.i{
+    background: rgb(255, 0, 85);
+    color: white;
+}
+.tag {
+    background: rgba(255, 255, 255, 0.781);
+    color: rgb(0, 0, 0);
+}
+.finalizado{
+    background: rgb(0, 69, 90);
+    color: white;
+}
+/*fim da lista e inicio das infos*/
+.detalhes .recentesinfos {
+    position: relative;
+    max-height: auto;
+    border: 3px solid rgb(19 103 182);
+    border-radius: 20px;
+    padding: 20px;
+}
+.detalhes .recentesinfos .imgbx {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    display: none;
+    opacity: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: opacity 2s;
+}
+.detalhes .recentesinfos .imgbx.selected {
+    position: relative;
+    width: 99%;
+    height: auto;
+    display: block;
+    opacity: 1;
+    border-radius: 10px;
+    overflow: hidden;
+
+}
+.detalhes .recentesinfos .imgbx img {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.detalhes .recentesinfos table tr td {
+    padding: 7px 10px;
+}
+.detalhes .recentesinfos table tr td h4 {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.2em;
+}
+.detalhes .recentesinfos table tr td h4 span {
+    font-size: 14px;
+    color: gray;
+}
+/* responsividade*/
+@media (max-width: 992px){
+    .navegacao{
+        left: -250px;
+    }
+    .navegacao.active{
+        left: 0;
+        width: 250px;
+    }
+    .main {
+        width: 100%;
+        left: 0;
+    }
+    .main.active{
+        width: calc(100% - 250px);
+        left: 250px;
+    }
+    .cardbox {
+        grid-template-columns: repeat(2, 1fr );
+    }
+}
+@media (max-width: 758px)
+{
+    .detalhes {
+        grid-template-columns: repeat(1, 1fr );
+    }
+    .detalhes_frota .recentesobs_frota{
+        overflow: auto;
+    }
+    .detalhes_frota .recentesobs_frota table {
+        width: 758px;
+    }
+    .cardheader h2 {
+        font-size: 20px;
+    font-weight: 600;
+    }
+}
+@media (max-width: 480px) 
+{
+    .cardbox {
+        grid-template-columns: repeat(1, 1fr );
+    }
+    .detalhes .recentesobs{
+        overflow: auto;
+    }
+    .detalhes .recentesobs table {
+        width: 600px;
+    }
+    .detalhes_frota .recentesobs_frota{
+        overflow: auto;
+    }
+    .detalhes_frota .recentesobs_frota table {
+        width: 600px;
+    }
+    .navegacao {
+        width: 100%;
+        left: -100%;
+        z-index: 1000;
+    }
+    .navegacao.active {
+        width: 100%;
+        left: 0;
+    }
+    .toggle.active{
+        z-index: 10000;
+        right: 0;
+        left: initial;
+        position: fixed;
+    }
+    .toggle.active::before {
+        color: white;
+    }
+    .main, .main.active {
+        width: 100%;
+        left: 0;
+    }
+    .navegacao ul li a .icon {
+        position: relative;
+        display: block;
+        min-width: 60px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        
+    }
+    .navegacao ul li a .icon .fas {
+        color: white;
+        font-size: 15px;
+    }
+    .navegacao ul li a .title {
+        position: relative;
+        display: block;
+        padding: 0 10px;
+        height: 40px;
+        line-height: 40px;
+        white-space: nowrap;
+    }
+    .detalhes_frota .recentesobs_frota table tr td {
+        padding: 9px 5px;
+        font-size: 12px;
+    }
+    .detalhes_frota .recentesobs_frota table th {
+        font-size: 12px;
+    }
+    
+    
+}

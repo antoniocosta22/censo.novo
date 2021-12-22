@@ -1,0 +1,103 @@
+@font-face {
+    font-family: Poppins-Regular;
+    src: url("../font_google/Poppins-Medium.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    line-height: 100%;
+    height: 100%;
+}
+body{
+    display: grid;
+    background: rgb(4,137,201);
+    background: linear-gradient(317deg, rgb(2, 100, 146) 0%, rgb(116, 213, 252)100%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: rgb(255, 255, 255);
+    font-family: Poppins-regular, arial;
+}
+
+.logotipo {
+    padding: 20px;
+}
+
+.meio {
+    margin: auto;
+    height: auto;
+    width: 100%;
+    display: flex;
+}
+.formlogin {
+    border-radius: 10px;
+    background-color: #0176b9cc;
+    width: max-content;
+    height: auto;
+    margin: auto;
+    box-shadow: 1px 1px 1px rgb(255, 255, 255);
+   /* margin: 120px auto 0 auto;
+    align-items: center;
+    justify-content: center;*/
+}
+
+
+input {
+    color: white;
+    outline: none;
+    display: block;
+    height: 35px;
+    width: 250px;
+    margin: 20px;
+    border-radius: 10px;
+    border: none;
+    font-size: 12pt;
+    padding: 0px 20px;
+    background: rgba(255, 255, 255, 0.301);
+    
+}
+input[type=submit]{
+    background: #0b83a800;
+    border: none;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    display: block;
+    margin: 0 auto 0 auto;
+    border: 1px solid white;
+    font-weight: bold;
+   
+}
+
+input[type=submit]:hover{
+    background: #ffffffcc;
+    color: #0176b9cc;
+    font-weight: bold;
+    transition: 1s;
+    border: 1px solid rgb(255, 255, 255);
+
+}
+a{
+    display: block;
+    text-decoration: none;
+    padding: 10px;
+    color: white;
+    text-align: center;
+}
+
+p {
+    display: block;
+    text-decoration: none;
+    padding: 20px;
+    color: white;
+    text-align: center;
+
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+::-webkit-input-placeholder {
+    color: white;
+}
+

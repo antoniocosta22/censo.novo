@@ -1,0 +1,91 @@
+.buscar {
+    text-align: center;
+}
+.dropbtn {
+  color: black;
+  padding: 1px 15px 1px 15px;
+  font-size: 14px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: rgb(19, 103, 182);
+  color: white;
+}
+
+#myInput {
+  box-sizing: border-box;
+  background-image: url('searchicon.png');
+  background-position: 14px 12px;
+  background-repeat: no-repeat;
+  font-size: small;
+  text-align: center;
+  width: auto;
+  padding: 14px 20px 12px 45px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+}
+
+#myInput:focus {outline: 3px solid #ddd;}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f6f6f6;
+  min-width: 230px;
+  border-radius: 10px;
+  text-align: left;
+  overflow: auto;
+  border: 1px solid #ddd;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+    font-size: small;
+    padding: 5px;
+    text-decoration: none;
+    display: flex;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {
+    display: block;
+    margin-top: 25px;
+}
+#mensagem {
+        padding: 7px;
+        background-color: white;
+        border-radius: 7px;
+        display: block;
+        text-align: center;
+        width: auto;
+    }
+    @media (max-width: 480px) 
+{
+    #mensagem {
+        font-size: 12px;
+    }
+    .show {
+      left: -30px;
+  }
+
+}
+@media (max-width: 590px) 
+{
+    #mensagem {
+        font-size: 12px;
+    }
+    .show {
+      left: -30px;
+  }
+
+}

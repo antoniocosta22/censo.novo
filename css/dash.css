@@ -1,0 +1,381 @@
+
+/*Dashboard censo*/
+
+@font-face {
+     font-family: Poppins-Regular;
+     src: url("../font_google/Poppins-Medium.ttf");
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins-regular;
+}
+body {
+    overflow-x: hidden;
+}
+/* conteudo geral*/
+.container {
+    position: relative;
+    width: 100%;
+}
+.navegacao{
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background: rgb(19, 103, 182);
+    transition: 0.5s;
+    overflow: hidden;
+}
+.navegacao.active {
+    width: 60px;
+}
+/* estilização da lista*/
+.navegacao ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.navegacao ul li {
+    position: relative;
+    width: 100%;
+    list-style: none;
+}
+.navegacao ul li:hover{
+    background: rgb(0, 168, 247);
+}
+.navegacao ul li:nth-child(1){
+    margin-bottom: 20px;
+}
+.navegacao ul li:nth-child(1):hover{
+    background: transparent;
+}
+.navegacao ul li a {
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: white;
+}
+/* estilização dos icones*/
+.navegacao ul li a .icon {
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+.navegacao ul li a .icon .fas {
+    color: white;
+    font-size: 24px;
+}
+.navegacao ul li a .title {
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 50px;
+    line-height: 50px;
+    white-space: nowrap;
+}
+
+/* fim das classes de navegação e inicio do main */
+
+.main {
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height: 100vh;
+    background: white;
+    transition: 0.5s;
+}
+.main.active {
+    width: calc(100% - 60px);
+    left: 60px;
+}
+/* barra de navegação horizontal da parte de cima com o input buscar e foto*/
+.main .topbar {
+    width: 100%;
+    height: 60px;
+    padding: 0 10px;
+    display: flex;
+    background: rgb(6, 64, 119);
+    justify-content: space-between;
+    align-items: center;
+}
+/* fechamento do menu de navegação*/
+.toggle {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
+.toggle:before {
+    content: '\f0c9';
+    font-family: FontAwesome;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    line-height: 60px;
+    font-size: 24px;
+    text-align: center;
+    color: rgb(238, 238, 238);
+}
+/* input de busca*/
+.buscar {
+    position: relative;
+    width: 400px;
+    margin: 0 10px;
+}
+.buscar label {
+    position: relative;
+    width: 100%;
+
+}
+/* input buscar*/
+.buscar label input {
+    width: 100%;
+    height: 35px;
+    border-radius: 40px;
+    border: none;
+    padding: 5px 40px;
+    outline: none;
+}
+.buscar label .fas {
+    position: absolute;
+    left: 15px;
+    top: 2.5px;
+}
+/* imagem do usuario*/
+.user {
+    position: relative;
+    min-width: 50px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+.user img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* cartões do inicio*/
+.cardbox {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr );
+    grid-gap: 20px;
+}
+.cardbox .card {
+    position: relative;
+    background: rgb(236, 239, 243);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.cardbox .card .numbers {
+    position: relative;
+    font-size: 1.5em;
+    font-weight: 500;
+}
+.cardbox .card .cardname {
+    color: rgb(100, 100, 100);
+}
+.cardbox .card .iconbox {
+    font-size: 1.5em;
+    color: rgb(13, 127, 233);
+}
+/* detalhes*/
+.detalhes {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    padding-top: 0;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 2fr 1fr;
+}
+.detalhes .recentesobs {
+    position: relative;
+    height: auto;
+    min-height: 300px;
+    background: rgb(236, 239, 243);
+    padding: 20px;
+}
+.cardheader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.cardheader h2 {
+    font-weight: 600;
+}
+.botao {
+    position: relative;
+    padding: 5px 10px;
+    background: rgb(13, 127, 233);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+/*formatação da tabela*/
+.detalhes table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+.detalhes table thead td{
+    font-weight: 600;
+    border-bottom: 1px solid black;
+}
+#linhas{
+    border-bottom: 1px solid black;
+}
+
+.detalhes .recentesobs table tbody tr:hover{
+    background: rgb(13, 127, 233);
+    color: white;
+}
+.detalhes .recentesobs table tr td {
+    padding: 9px 5px;
+}
+.detalhes .recentesobs table thead tr td:last-child,
+.detalhes .recentesobs table tbody tr td:last-child{
+    text-align: right;
+}
+.detalhes .recentesobs table thead tr td:nth-child(2),
+.detalhes .recentesobs table tbody tr td:nth-child(2){
+    text-align: right;
+    padding-right: 20px;
+}
+.detalhes .recentesobs table thead tr td:nth-child(3),
+.detalhes .recentesobs table tbody tr td:nth-child(3){
+    text-align: center;
+}
+.status {
+    position: relative;
+    padding: 2px 4px;
+    background: yellow;
+    color: rgb(0, 0, 0);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 300px;
+    letter-spacing: 1px;
+}
+.pendente {
+    background: rgba(251, 255, 0, 0.781);
+}
+.finalizada {
+    background: rgba(48, 255, 7, 0.781);
+}
+.encaminhada{
+    background: blue;
+    color: white;
+}
+/*fim da lista e inicio das infos*/
+.detalhes .recentesinfos {
+    position: relative;
+    min-height: 300px;
+    background: rgb(236, 239, 243);
+    padding: 20px;
+}
+.detalhes .recentesinfos .imgbx {
+    position: relative;
+    width: auto;
+    height: 200px;
+    overflow: hidden;
+}
+.detalhes .recentesinfos .imgbx img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.detalhes .recentesinfos table tr:hover,
+.detalhes .recentesinfos table tr:hover td h4 span
+{
+    background: rgb(13, 127, 233);
+    color: white;
+}
+.detalhes .recentesinfos table tr td {
+    padding: 7px 10px;
+}
+
+
+/* responsividade*/
+@media (max-width: 992px){
+    .navegacao{
+        left: -300px;
+    }
+    .navegacao.active{
+        left: 0;
+        width: 300px;
+    }
+    .main {
+        width: 100%;
+        left: 0;
+    }
+    .main.active{
+        width: calc(100% - 300px);
+        left: 300px;
+    }
+    .cardbox {
+        grid-template-columns: repeat(2, 1fr );
+    }
+}
+@media (max-width: 758px)
+{
+    .detalhes {
+        grid-template-columns: repeat(1, 1fr );
+    }
+    .cardheader h2 {
+        font-size: 20px;
+    font-weight: 600;
+    }
+}
+@media (max-width: 480px) 
+{
+    .cardbox {
+        grid-template-columns: repeat(1, 1fr );
+    }
+    .detalhes .recentesobs{
+        overflow: auto;
+    }
+    .detalhes .recentesobs table {
+        width: 600px;
+    }
+    .navegacao {
+        width: 100%;
+        left: -100%;
+        z-index: 1000;
+    }
+    .navegacao.active {
+        width: 100%;
+        left: 0;
+    }
+    .toggle.active{
+        z-index: 10000;
+        right: 0;
+        left: initial;
+        position: fixed;
+    }
+    .toggle.active::before {
+        color: white;
+    }
+    .main, .main.active {
+        width: 100%;
+        left: 0;
+    }
+}
